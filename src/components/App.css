@@ -1,0 +1,113 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 20px;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #64b5d6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #4d9fca;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.statistics-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.statistics-item {
+    margin-bottom: 5px;
+}
+
+.notification {
+    text-align: center;
+    color: #888;
+    margin-top: 30px;
+}
+
+/* Additional styles */
+.container {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.feedback-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-btns button {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.statistics-list {
+    margin-top: 20px;
+}
+
+.total-feedback {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.positive-feedback {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4caf50;
+}
