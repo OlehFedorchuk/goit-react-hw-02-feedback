@@ -1,7 +1,8 @@
-import { Component } from "react";
-import Statistics from "../components/Statistics";
-import FeedbackOptions from "../components/FeedbackOptions";
-import Section from "../components/Section";
+import React, { Component } from 'react';
+import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
+import Statistics from './components/Statistics/Statistics';
+import Section from './components/Section/Section';
+import Notification from './components/Notification/Notification';
 
 class App extends Component {
   state = {
@@ -10,7 +11,7 @@ class App extends Component {
     bad: 0,
   };
 
-  goodClick = () => {
+ goodClick = () => {
     this.setState((prevState) => ({ good: prevState.good + 1 }));
   };
 
@@ -24,13 +25,12 @@ class App extends Component {
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
-    const total = good + neutral + bad;
-    return total;
+    return good + neutral + bad;
   };
 
   countPositiveFeedbackPercentage = () => {
-    const { good, neutral, bad } = this.state;
-    const total = good + neutral + bad;
+    const { good } = this.state;
+    const total = this.countTotalFeedback();
     const positiveFeedback = (good / total) * 100;
     return Math.round(positiveFeedback);
   };
@@ -39,19 +39,19 @@ class App extends Component {
     const { good, neutral, bad } = this.state;
     const totalFeedback = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
-    const options = ["Good", "Neutral", "Bad"];
+    const hasFeedback = totalFeedback > 0;
 
     return (
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={options}
+            options={['Good', 'Neutral', 'Bad']}
             onLeaveFeedback={(option) => {
-              if (option === "Good") {
+              if (option === 'Good') {
                 this.goodClick();
-              } else if (option === "Neutral") {
+              } else if (option === 'Neutral') {
                 this.neutralClick();
-              } else if (option === "Bad") {
+              } else if (option === 'Bad') {
                 this.badClick();
               }
             }}
@@ -59,13 +59,17 @@ class App extends Component {
         </Section>
 
         <Section title="Statistics">
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={totalFeedback}
-            positivePercentage={positivePercentage}
-          />
+          {hasFeedback ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={totalFeedback}
+              positivePercentage={positivePercentage}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
         </Section>
       </div>
     );
