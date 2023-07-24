@@ -1,7 +1,11 @@
+#root {
+    margin: 20px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
-    margin: 20px;
+    margin: 0;
     padding: 0;
 }
 
