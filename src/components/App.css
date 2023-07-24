@@ -20,13 +20,11 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 0;
     margin-bottom: 20px;
     color: #555;
 }
 
 h2 {
-    margin-top: 0;
     margin-bottom: 10px;
     color: #777;
 }
@@ -75,7 +73,6 @@ li {
     margin-top: 30px;
 }
 
-/* Additional styles */
 .container {
     margin-top: 20px;
 }
